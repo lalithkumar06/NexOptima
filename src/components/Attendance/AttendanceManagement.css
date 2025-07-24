@@ -1,0 +1,250 @@
+.attendance-management {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.attendance-header h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 700;
+}
+
+.attendance-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.attendance-status {
+  display: flex;
+  align-items: center;
+}
+
+.attendance-content {
+  width: 100%;
+}
+
+.employee-attendance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.attendance-calendar {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-calendar h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.custom-calendar {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+}
+
+.custom-calendar .react-calendar__tile {
+  position: relative;
+  padding: 0.75rem 0.5rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.custom-calendar .react-calendar__tile:hover {
+  background: #f3f4f6;
+}
+
+.custom-calendar .react-calendar__tile--active {
+  background: #2563eb;
+  color: white;
+}
+
+.attendance-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.attendance-indicator.present {
+  background: #10b981;
+  color: white;
+}
+
+.attendance-indicator.late {
+  background: #f59e0b;
+  color: white;
+}
+
+.attendance-indicator.absent {
+  background: #ef4444;
+  color: white;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.legend-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.legend-indicator.present {
+  background: #10b981;
+  color: white;
+}
+
+.legend-indicator.late {
+  background: #f59e0b;
+  color: white;
+}
+
+.legend-indicator.absent {
+  background: #ef4444;
+  color: white;
+}
+
+.attendance-summary {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-summary h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.summary-card {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.team-attendance {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-selector {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-selector label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.date-selector input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.attendance-table {
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .employee-attendance {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .attendance-actions {
+    justify-content: center;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .date-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
