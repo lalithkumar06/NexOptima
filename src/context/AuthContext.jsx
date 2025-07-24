@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/auth/profile`);
+          const response = await axios.get(`${import.meta.env.VITE_API_URL || 'https://nexoptima.onrender.com/api'}/auth/profile`);
           dispatch({
             type: 'LOGIN_SUCCESS',
             payload: { user: response.data, token }
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
     try {
       dispatch({ type: 'LOGIN_START' });
       
-      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/auth/login`, { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'https://nexoptima.onrender.com/api'}/auth/login`, { email, password });
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
