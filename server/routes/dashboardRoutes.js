@@ -9,7 +9,6 @@ import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from 'date-fns';
 
 const router = express.Router();
 
-// Get dashboard stats
 router.get('/stats', authenticate, async (req, res) => {
   try {
     const userId = req.user.id;
@@ -21,7 +20,6 @@ router.get('/stats', authenticate, async (req, res) => {
     let stats = {};
 
     if (userRole === 'employee') {
-      // Employee dashboard stats
       const myTasks = await Task.find({ assignedTo: userId });
       const myAttendance = await Attendance.find({
         user: userId,
